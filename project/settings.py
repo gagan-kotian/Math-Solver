@@ -123,12 +123,15 @@ import os
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATIC_URL = '/static/'
 
-# Define the directory where static files will be collected
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# # Define the directory where static files will be collected
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# Use WhiteNoise to serve static files
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# # Use WhiteNoise to serve static files
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 
