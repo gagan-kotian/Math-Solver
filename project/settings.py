@@ -30,7 +30,10 @@ ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1'
 ]
+<<<<<<< HEAD
 
+=======
+>>>>>>> f7acdfaba4a6e193eb25fccd8c33b229c2d78a42
 
 
 # Application definition
