@@ -8,8 +8,7 @@
     <title>{% block title %}Math Solver{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
-    <!-- Debugging line to check the static file URL -->
-    <p>CSS URL: {% static 'css/styles.css' %}</p>
+    <!-- Include your CSS and JavaScript files here -->
 
     <style>
       body {
@@ -18,12 +17,14 @@
         background: #040c18;
         min-height: 100vh;
       }
+
       .content {
         flex: 1; /* Flex to take remaining space */
       }
       .dropdown {
         padding: 30px;
       }
+
       footer {
         text-align: center;
         padding: 30px;
@@ -44,11 +45,46 @@
         </button>
         <ul class="dropdown-menu">
           <li>
-            <a class="dropdown-item" href="{% url 'curve_fitting' %}"
-              >Curve Fitting</a
-            >
+            <a class="dropdown-item" href="{% url 'curve_fitting' %}">
+              Curve Fitting
+            </a>
           </li>
-          <!-- Other dropdown items -->
+          <li>
+            <a
+              class="dropdown-item"
+              href="{% url 'interpolation_polynomial' %}"
+            >
+              Interpolation Polynomial
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'interpolation_unequal' %}">
+              Interpolation Unequal
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'linear_regression' %}">
+              Linear Regression
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'newtongregory' %}">
+              Newton Gregory
+            </a>
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="{% url 'numerical_differentiation' %}"
+            >
+              Numerical Differentiation
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="{% url 'numerical_integration' %}">
+              Numerical Integration
+            </a>
+          </li>
         </ul>
       </div>
       {% block content %} {% endblock %}
