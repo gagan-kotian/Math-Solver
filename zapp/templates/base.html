@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}My Django Website{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/styles.css" />
+
+    <!-- Include your CSS and JavaScript files here -->
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: row;
+        background: #040c18;
+        min-height: 100vh;
+      }
+
+      .content {
+        flex: 1; /* Flex to take remaining space */
+      }
+      .dropdown {
+        padding: 30px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    {% include "sidebar.html" %}
+    <div class="content">
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Dropdown button
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="http://127.0.0.1:8000/curve_fitting"
+              >Curve Fitting</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="http://127.0.0.1:8000/interpolation_polynomial"
+              >Interpolation Polynomial</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="http://127.0.0.1:8000/interpolation_unequal"
+              >Interpolation Unequal</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="http://127.0.0.1:8000/linear_regression"
+              >Linear Regression</a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item" href="http://127.0.0.1:8000/newtongregory"
+              >Newton Gregory</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="http://127.0.0.1:8000/numerical_differentiation"
+              >Numerical Differentiation</a
+            >
+          </li>
+          <li>
+            <a
+              class="dropdown-item"
+              href="http://127.0.0.1:8000/numerical_integration"
+              >Numerical Integration</a
+            >
+          </li>
+        </ul>
+      </div>
+      {% block content %} {% endblock %}
+    </div>
+
+    <footer>
+      <p>&copy; 2023 My Django Website</p>
+    </footer>
+  </body>
+</html>

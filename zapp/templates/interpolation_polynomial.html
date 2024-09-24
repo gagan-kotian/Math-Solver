@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="centered-content rcorners">
+  <h1>Interpolating Polynomial</h1>
+  <form
+    method="post"
+    action="{% url 'interpolation_polynomial' %}"
+    style="padding: 10px; border: 1px solid #ccc"
+  >
+    {% csrf_token %} {{ form.as_p }}
+    <input
+      class="btn btn-success"
+      type="submit"
+      name="action"
+      value="Construct"
+    />
+  </form>
+
+  {% if result_displayed %}
+
+  <p>{{ str }}</p>
+
+  {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="centered-content">
+  <h1>Linear Regression</h1>
+  <form method="post" action="{% url 'linear_regression' %}">
+    {% csrf_token %} {{ form.as_p }}
+    <input class="btn btn-warning" type="submit" name="action" value="yonx" />
+    <input class="btn btn-success" type="submit" name="action" value="xony" />
+  </form>
+
+  {% if result_displayed %}
+  <h2>Result</h2>
+  <p>Correlation: {{ r }}</p>
+  <p>Slope: {{ m }}</p>
+  <p>Intercept: {{ c }}</p>
+  <p>{{ str }}</p>
+  <p>The Equation of the line is: {{ a }}</p>
+  {% endif %}
+</div>
+{% endblock %}

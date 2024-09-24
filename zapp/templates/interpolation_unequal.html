@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+<div class="centered-content">
+  <h1>Interpolation Unequal</h1>
+  <form method="post" action="{% url 'interpolation_unequal' %}">
+    {% csrf_token %} {{ form.as_p }}
+    <input
+      class="btn btn-success"
+      type="submit"
+      name="action"
+      value="Lagrange Interpolation"
+    />
+    <input
+      class="btn btn-warning"
+      type="submit"
+      name="action"
+      value="Divided Difference"
+    />
+  </form>
+
+  {% if result_displayed %}
+  <p>{{ str }}</p>
+  {% endif %}
+</div>
+{% endblock %}

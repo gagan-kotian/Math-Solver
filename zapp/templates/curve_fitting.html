@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block content %}
+<div class="centered-content">
+  <h1>Curve Fitting</h1>
+  <form method="post" action="{% url 'curve_fitting' %}">
+    {% csrf_token %} {{ form.as_p }}
+    <input class="btn btn-warning" type="submit" name="action" value="y=ax+b" />
+    <input
+      class="btn btn-success"
+      type="submit"
+      name="action"
+      value="y=ax^2+bx+c"
+    />
+    <input class="btn btn-warning" type="submit" name="action" value="y=ab^x" />
+    <input class="btn btn-success" type="submit" name="action" value="y=ax^b" />
+    <input
+      class="btn btn-warning"
+      type="submit"
+      name="action"
+      value="y=1/(ax+b)"
+    />
+  </form>
+
+  {% if result_displayed %}
+  <p>The curve is:</p>
+  <p>{{ str }}</p>
+  {% endif %}
+</div>
+{% endblock %}

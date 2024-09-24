@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block content %}
+<div class="centered-content">
+  <h1>Newton Gregory Interpolation</h1>
+  <form method="post" action="{% url 'newtongregory' %}">
+    {% csrf_token %} {{ form.as_p }}
+    <input
+      class="btn btn-success"
+      type="submit"
+      name="action"
+      value="Forward Interpolation"
+    />
+    <input
+      class="btn btn-warning"
+      type="submit"
+      name="action"
+      value="Backward Interpolation"
+    />
+  </form>
+
+  {% if result_displayed %}
+  <p>{{ str }}</p>
+  {% endif %}
+</div>
+{% endblock %}
